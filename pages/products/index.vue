@@ -18,7 +18,8 @@
             <b-card-text>
               ${{product.price}}.00
             </b-card-text>
-            <b-button href="#" variant="primary" @click="addToCart(product.productId)">Add To Cart</b-button>
+            <b-button href="#" variant="primary" @click="addToCart(product.productId, product.price)" v-if="cartData.indexOf(product.productId) <= -1">Add To Cart</b-button>
+            <b-button href="#" variant="primary" @click="addToCart(product.productId, product.price)" v-if="cartData.indexOf(product.productId) > -1" disabled>Added</b-button>
           </b-card>
         </div>
       </div>
@@ -45,8 +46,12 @@ export default {
     };
   },
   methods: {
-      addToCart (productId) {
-          this.$store.dispatch("product/addProduct", productId);
+      addToCart (productId, productPrice) {
+          let payload = {
+             productId: productId,
+             productPrice: productPrice
+          }
+          this.$store.dispatch("product/addProduct", payload);
       }
   }
 };

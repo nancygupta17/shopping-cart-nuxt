@@ -1,6 +1,9 @@
 <template>
   <section class="container">
     <div>
+      <div>
+          Total Amount : ${{totalPrice}}
+      </div>
       <div class="row">
         <div
           class="col-4"
@@ -24,7 +27,7 @@
             <b-button
               href="#"
               variant="primary"
-              @click="removeFromCart(productData.productId)"
+              @click="removeFromCart(productData.productId, productData.price)"
               >Remove From Cart</b-button
             >
           </b-card>
@@ -44,6 +47,7 @@ export default {
     ...mapState(["product"]),
     ...mapGetters({
       cartData: "product/cartProducts",
+      totalPrice: "product/totalPrice",
     }),
   },
 
@@ -53,8 +57,12 @@ export default {
     };
   },
   methods: {
-    removeFromCart(productId) {
-      this.$store.dispatch("product/removeProduct", productId);
+    removeFromCart(productId, productPrice) {
+        let payload = {
+             productId: productId,
+             productPrice: productPrice
+          }
+        this.$store.dispatch("product/removeProduct", payload);
     },
   },
 };
