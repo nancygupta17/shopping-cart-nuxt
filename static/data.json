@@ -1,0 +1,38 @@
+[
+    {
+        "productId": 1,
+        "title": "Product 1",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "price": 100
+    },
+    {
+        "productId": 2,
+        "title": "Product 2",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "https://i.ytimg.com/vi/ETsekJKsr3M/maxresdefault.jpg",
+        "price": 200
+    },
+    {
+        "productId": 3,
+        "title": "Product 3",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSRJTR9ZsznergyGQsBh_Mp_XZvRtFXJBFHGZokNlOdMFjP4aXWi1khA81vcZV8C18lPg&usqp=CAU",
+        "price": 300
+    },
+    {
+        "productId": 4,
+        "title": "Product 4",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtq2T88OkIoqginLsxjR5XaMFGrNy0JMDrpw&usqp=CAU",
+        "price": 400
+    },
+    {
+        "productId": 5,
+        "title": "Product 5",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "https://www.dakshadigitas.com/wp-content/uploads/2016/08/botel.jpg",
+        "price": 500
+    }
+
+]
