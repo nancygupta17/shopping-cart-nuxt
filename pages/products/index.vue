@@ -19,7 +19,7 @@
               ${{product.price}}.00
             </b-card-text>
             <b-button href="#" variant="primary" @click="addToCart(product.productId, product.price)" v-if="cartData.indexOf(product.productId) <= -1">Add To Cart</b-button>
-            <b-button href="#" variant="primary" @click="addToCart(product.productId, product.price)" v-if="cartData.indexOf(product.productId) > -1" disabled>Added</b-button>
+            <b-button href="/cart" variant="primary" v-if="cartData.indexOf(product.productId) > -1">Go To Cart</b-button>
           </b-card>
         </div>
       </div>

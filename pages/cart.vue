@@ -1,12 +1,19 @@
 <template>
   <section class="container">
     <div>
-      <div>
-          Total Amount : ${{totalPrice}}
+      <div class="row">
+        <div class="col-8 mt-4">
+          <div class="price-sec">Total Amount : ${{ totalPrice.toFixed(2) }}</div>
+        </div>
+        <div class="col-4 mt-4">
+          <div class="cart-action-sec">
+            <b-button variant="danger" @click="emptyCart()">Empty Cart</b-button>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div
-          class="col-4"
+          class="col-4 mt-4"
           v-for="(productData, index) in productList"
           :key="index"
         >
@@ -58,12 +65,15 @@ export default {
   },
   methods: {
     removeFromCart(productId, productPrice) {
-        let payload = {
-             productId: productId,
-             productPrice: productPrice
-          }
-        this.$store.dispatch("product/removeProduct", payload);
+      let payload = {
+        productId: productId,
+        productPrice: productPrice,
+      };
+      this.$store.dispatch("product/removeProduct", payload);
     },
+    emptyCart() {
+        this.$store.dispatch("product/load");
+    }
   },
 };
 </script>

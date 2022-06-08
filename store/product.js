@@ -1,52 +1,56 @@
 export const state = () => ({
-    cartProducts: [],
-    totalPrice: 0
-})
+  cartProducts: [],
+  totalPrice: 0,
+});
 
 export const getters = {
-    cartProducts: function (state) { 
-        return state.cartProducts 
-    },
-    totalPrice: function (state) { 
-        return Math.abs(state.totalPrice )
-    },
-}
+  cartProducts: function (state) {
+    return state.cartProducts;
+  },
+  totalPrice: function (state) {
+    return Math.abs(state.totalPrice);
+  },
+  totalItems: function (state) {
+    return state.cartProducts.length;
+  },
+};
 
 export const actions = {
-    load ({ commit }) {
-        commit('updateCart') 
-    },
+  load({ commit }) {
+    commit("updateCart");
+  },
 
-    addProduct ({ commit }, product) {
-        return new Promise(resolve => {
-            commit('addToCart', product)
-            resolve() 
-        })
-    },
-    removeProduct ({ commit }, product) {
-        return new Promise(resolve => {
-            commit('removeFromCart', product)
-            resolve() 
-        })
-    }
-}
+  addProduct({ commit }, product) {
+    return new Promise((resolve) => {
+      commit("addToCart", product);
+      resolve();
+    });
+  },
+  removeProduct({ commit }, product) {
+    return new Promise((resolve) => {
+      commit("removeFromCart", product);
+      resolve();
+    });
+  },
+};
 
 export const mutations = {
-    updateCart(state) {
-        state.cartProducts = []
-        console.log("state.cartProducts => ", state.cartProducts);
-    },
+  updateCart(state) {
+    state.cartProducts = [];
+    state.totalPrice = 0;
+    console.log("state.cartProducts => ", state.cartProducts);
+  },
 
-    addToCart (state, product) {
-        state.cartProducts.push(product.productId)
-        state.totalPrice = state.totalPrice + product.productPrice
-    },
+  addToCart(state, product) {
+    state.cartProducts.push(product.productId);
+    state.totalPrice = state.totalPrice + product.productPrice;
+  },
 
-    removeFromCart (state, product) {
-        const index = state.cartProducts.indexOf(product.productId);
-        if (index > -1) {
-            state.cartProducts.splice(index, 1); // 2nd parameter means remove one item only
-        }
-        state.totalPrice = state.totalPrice - product.productPrice
-    },
-}
+  removeFromCart(state, product) {
+    const index = state.cartProducts.indexOf(product.productId);
+    if (index > -1) {
+      state.cartProducts.splice(index, 1); // 2nd parameter means remove one item only
+    }
+    state.totalPrice = state.totalPrice - product.productPrice;
+  },
+};
